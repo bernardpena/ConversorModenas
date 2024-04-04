@@ -7,6 +7,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!--message-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     
 </head>
 <body>
@@ -15,21 +18,23 @@
         <div class="contenedor">
             <div class="formulario">
                 <h3>Pesos CLP</h3>
-                <input type="text" id="txtClp" class="inputClp">
+                <input type="text" maxlength="10" id="txtClp" class="inputClp" placeholder="Ingrese valor a cambiar" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
                 <h3>Moneda a Convertir:</h3>
-                <select name="cambio" id="cambio">
-                    <option class="moneda" value="Dolar">Dolar</option>
-                    <option class="moneda" value="Pesos">Pesos</option>
+                <select name="cambio" id="cambio" >
+                    <option class="monedaDolar" value="Dolar" >Dolar</option>
+                    <option class="monedaDolar" value="Euro"  >Euro</option>
                 </select>
                 <br>
                 <br>
-                <button id="btnCambio">Cambiar</button>
-                <h2>Resultado: <span>$</span></h2>
+                <button id="btnCambio" onclick="carga()">Cambiar</button>
+                <h2 class="prueba">Resultado: <span>$</span></h2>
             </div>
         </div>
     </main>
 
     <script src="./assets/js/index.js" ></script>
+    <!--alert Personalizado -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/sweetalert.css">
 </body>
 </html>
 </html>
