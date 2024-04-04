@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertidor  de Monedas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
 </head>
 <body>
-    
+    <main>     
+        <h3 class="titulo">Tipo de Cambio</h3>
+        <div class="contenedor">
+            <div class="formulario">
+                <h3>Pesos CLP</h3>
+                <input type="text" id="txtClp" class="inputClp">
+                <h3>Moneda a Convertir:</h3>
+                <select name="cambio" id="cambio">
+                    <option class="moneda" value="Dolar">Dolar</option>
+                    <option class="moneda" value="Pesos">Pesos</option>
+                </select>
+                <br>
+                <br>
+                <button id="btnCambio">Cambiar</button>
+                <h2>Resultado: <span>$</span></h2>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/index.js" ></script>
 </body>
+</html>
 </html>
