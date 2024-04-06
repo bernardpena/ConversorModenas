@@ -10,7 +10,6 @@
     <!--message-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
-    
 </head>
 <body>
     <main>     
@@ -21,20 +20,25 @@
                 <input type="text" maxlength="10" id="txtClp" class="inputClp" placeholder="Ingrese valor a cambiar" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
                 <h3>Moneda a Convertir:</h3>
                 <select name="cambio" id="cambio" >
+                    <option class="monedaDolar" value="" ></option>
                     <option class="monedaDolar" value="Dolar" >Dolar</option>
                     <option class="monedaDolar" value="Euro"  >Euro</option>
                 </select>
                 <br>
-                <br>
-                <button id="btnCambio" onclick="carga()">Cambiar</button>
-                <h2 class="prueba">Resultado: <span>$</span></h2>
+                <button id="btnCambio" onclick="btnCambio()">Cambiar</button>
+                <h2 class="prueba">Resultado:</h2>
+                <p class="resultadoCambio"></p>
             </div>
         </div>
     </main>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
 
     <script src="./assets/js/index.js" ></script>
-    <!--alert Personalizado -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/sweetalert.css">
+    <!-- Char js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 </html>
 </html>

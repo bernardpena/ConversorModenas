@@ -1,3 +1,52 @@
 {
-  "cSpell.words": ["codigo", "listeren", "swal", "Vacio"]
+  "cSpell.words": [
+    "anteriores",
+    "Atención",
+    "Blanco",
+    "cambiar",
+    "cambio",
+    "codigo",
+    "códigos",
+    "Configuracion",
+    "configuración",
+    "Convertir",
+    "Creamos",
+    "Datos",
+    "Debe",
+    "dolar",
+    "Estamos",
+    "Grafica",
+    "gráfico",
+    "ingresar",
+    "Ingrese",
+    "Linea",
+    "listeren",
+    "moneda",
+    "Monedas",
+    "necesarias",
+    "nombres",
+    "objeto",
+    "preparar",
+    "Presentado",
+    "Problemas",
+    "resultado",
+    "swal",
+    "titulo",
+    "traer",
+    "usando",
+    "utilizar",
+    "Vacio",
+    "valores"
+  ],
+  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "spellright.language": [
+    "es",
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "javascript"
+  ]
 }
