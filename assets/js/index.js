@@ -3,39 +3,69 @@ const inputText = document.getElementById("txtClp");
 const element = document.querySelector(".resultadoCambio");
 const element1 = document.getElementById("cambio");
 
-function dolar() {
-  async function traerDolar() {
-    try {
-      const res = await fetch("https://mindicador.cl/api");
-      const data = await res.json();
-      resultado = parseFloat(inputText.value) / parseFloat(data.dolar["valor"]); // 0.0011 /
-      element.innerHTML = "$ " + resultado.toFixed(2);
-      let graficaValor = data.codigo;
-      console.log(res + "/" + graficaValor + "/");
-      graficos2();
-    } catch (error) {
-      message();
+function tipoDivisa() {
+  if (element1.value == "Dolar") {
+    console.log("tipo de divisa Dolar");
+    async function traerDolar() {
+      try {
+        const res = await fetch("https://mindicador.cl/api");
+        const data = await res.json();
+        resultado =
+          parseFloat(inputText.value) / parseFloat(data.dolar["valor"]);
+        element.innerHTML = "$ " + resultado.toFixed(2) + " usd";
+        graficos2();
+      } catch (error) {
+        message();
+      }
     }
+    traerDolar();
+  } else if (element1.value == "Euro") {
+    console.log("tipo de divisa Euro");
+    async function traerEuro() {
+      try {
+        const res = await fetch("https://mindicador.cl/api");
+        const data = await res.json();
+        resultado =
+          parseFloat(inputText.value) / parseFloat(data.euro["valor"]); // 0.00097 /
+        element.innerHTML = "$ " + resultado.toFixed(2) + " eur";
+        graficos2();
+      } catch (error) {
+        message();
+      }
+    }
+    traerEuro();
   }
-  traerDolar();
 }
 
-function euro() {
-  async function traerEuro() {
-    try {
-      const res = await fetch("https://mindicador.cl/api");
-      const data = await res.json();
-      resultado = parseFloat(inputText.value) / parseFloat(data.euro["valor"]); // 0.00097 /
-      element.innerHTML = "$ " + +resultado.toFixed(2);
-      let graficaValor = data.codigo;
-      console.log(res + "/" + graficaValor + "/");
-      graficos2();
-    } catch (error) {
-      message();
-    }
-  }
-  traerEuro();
-}
+// function dolar() {
+//   async function traerDolar() {
+//     try {
+//       const res = await fetch("https://mindicador.cl/api");
+//       const data = await res.json();
+//       resultado = parseFloat(inputText.value) / parseFloat(data.dolar["valor"]);
+//       element.innerHTML = "$ " + resultado.toFixed(2);
+//       graficos2();
+//     } catch (error) {
+//       message();
+//     }
+//   }
+//   traerDolar();
+// }
+
+// function euro() {
+//   async function traerEuro() {
+//     try {
+//       const res = await fetch("https://mindicador.cl/api");
+//       const data = await res.json();
+//       resultado = parseFloat(inputText.value) / parseFloat(data.euro["valor"]); // 0.00097 /
+//       element.innerHTML = "$ " + resultado.toFixed(2);
+//       graficos2();
+//     } catch (error) {
+//       message();
+//     }
+//   }
+//   traerEuro();
+// }
 
 function message() {
   swal(
@@ -45,7 +75,7 @@ function message() {
   );
 }
 
-function messageChart(error) {
+function messageChart() {
   swal(
     "Atención!",
     "Estamos Presentado Problemas con la base de Datos para generar el Gráfico",
@@ -57,15 +87,21 @@ function messageVacio() {
   swal("Atención!", "Debe ingresar un valor en el campo en Blanco!", "info");
 }
 
+function refresh() {
+  element1.refresh;
+}
+
 function btnCambio() {
   if (inputText.value == "") {
     messageVacio();
     inputText.focus();
   } else {
     if (element1.value == "Dolar") {
-      dolar();
+      // dolar();
+      tipoDivisa();
     } else if (element1.value == "Euro") {
-      euro();
+      // euro();
+      tipoDivisa();
     }
   }
   inputText.focus();
@@ -74,16 +110,18 @@ function btnCambio() {
 function graficos2() {
   async function getMonedas() {
     if (element1.value == "Dolar") {
-      const endpoint = "https://mindicador.cl/api/dolar";
+      let endpoint = "https://mindicador.cl/api/dolar";
       const res = await fetch(endpoint);
       const monedas = await res.json();
       return monedas;
     } else if (element1.value == "Euro") {
-      const endpoint = "https://mindicador.cl/api/euro";
+      console.log(endpoint);
+      let endpoint = "https://mindicador.cl/api/euro";
       const res = await fetch(endpoint);
       const monedas = await res.json();
       return monedas;
     }
+    // renderGrafica();
   }
 
   function prepararConfiguracionParaLaGrafica(monedas) {
@@ -91,7 +129,7 @@ function graficos2() {
     const tipoDeGrafica = "line";
     const nombresDeLasMonedas = monedas.serie.map((moneda) => {
       const valor = moneda.fecha;
-      return valor.slice(0, 10);
+      return valor.slice(0, 20);
     });
     const titulo = monedas.codigo;
     const colorDeLinea = "red";

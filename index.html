@@ -19,7 +19,7 @@
                 <h3>Pesos CLP</h3>
                 <input type="text" maxlength="10" id="txtClp" class="inputClp" placeholder="Ingrese valor a cambiar" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
                 <h3>Moneda a Convertir:</h3>
-                <select name="cambio" id="cambio" >
+                <select name="cambio" id="cambio" onchange="refresh()">
                     <option class="monedaDolar" value="" ></option>
                     <option class="monedaDolar" value="Dolar" >Dolar</option>
                     <option class="monedaDolar" value="Euro"  >Euro</option>
@@ -28,6 +28,7 @@
                 <button id="btnCambio" onclick="btnCambio()">Cambiar</button>
                 <h2 class="prueba">Resultado:</h2>
                 <p class="resultadoCambio"></p>
+                <p class="resultadoCambio2"></p>
             </div>
         </div>
     </main>

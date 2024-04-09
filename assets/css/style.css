@@ -64,6 +64,12 @@ main{
     background-color: #31D2F2;
 }
 
+.resultadoCambio{
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+
 .graficos{
     display: flex;
     justify-content: center;
