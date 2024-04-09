@@ -125,20 +125,18 @@ function graficos2() {
   }
 
   function prepararConfiguracionParaLaGrafica(monedas) {
-    // Creamos las variables necesarias para el objeto de configuración
     const tipoDeGrafica = "line";
     const nombresDeLasMonedas = monedas.serie.map((moneda) => {
       const valor = moneda.fecha;
       return valor.slice(0, 20);
     });
-    const titulo = monedas.codigo;
+    const titulo = monedas.nombre;
     const colorDeLinea = "red";
     const valores = monedas.serie.map((moneda) => {
       const valor = moneda.valor;
       return Number(valor);
     });
 
-    // Creamos el objeto de configuración usando las variables anteriores
     const config = {
       type: tipoDeGrafica,
       data: {
