@@ -15,8 +15,10 @@
     "Debe",
     "dolar",
     "Estamos",
+    "grafica",
     "Grafica",
     "gráfico",
+    "graficos",
     "ingresar",
     "Ingrese",
     "Linea",
@@ -39,14 +41,6 @@
     "valores"
   ],
   "CodeGPT.apiKey": "CodeGPT Plus Beta",
-  "spellright.language": [
-    "es",
-    "en"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext",
-    "javascript"
-  ]
+  "spellright.language": ["es", "en"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "javascript"]
 }

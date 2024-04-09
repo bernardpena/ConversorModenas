@@ -63,3 +63,20 @@ main{
     border-radius: 5px;
     background-color: #31D2F2;
 }
+
+.graficos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tituloGraf{
+    display: flex;
+    justify-content: center;
+}
+
+.graficos #myChart{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
